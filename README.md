@@ -8,11 +8,9 @@
 
 其中，动漫信息包含七条信息，包括动画的id，名字，主题类型，形式，集数等信息。评价信息包含用户对动画的评价。具体的情况如下：
 
+[![s0a0e0.png](https://s3.ax1x.com/2021/01/15/s0a0e0.png)](https://imgchr.com/i/s0a0e0)
 
-
-![image-20210114090336004](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114090336004.png)
-
-![image-20210114090606094](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114090606094.png)
+[![s0atzj.png](https://s3.ax1x.com/2021/01/15/s0atzj.png)](https://imgchr.com/i/s0atzj)
 
 对于原始数据，我们进行简单的数据清洗。主要包括以下两个部分：对于数据评分缺失的项目，如评价信息里评分为$-1$的元组，进行删除；对于动画的名称信息，进行正则表达式的过滤，去除其中的特殊字符。由于合并之后的表很大而缺失值很少，直接删除不会影响其结果。
 
@@ -29,9 +27,9 @@
 
 从玫瑰图上可以看出，**TV**动画和**OVA**的数量是最多的，两者占超过总体的50%。而对TV动画的评价则远远多于其他类别，约为70%。因此，后续将着重分析**TV**动画。
 
-![image-20210114105247105](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114105247105.png)
+![s0aYWQ.png](https://s3.ax1x.com/2021/01/15/s0aYWQ.png)(https://imgchr.com/i/s0aYWQ)
 
-![image-20210114105531583](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114105531583.png)
+![s0adLq.png](https://s3.ax1x.com/2021/01/15/s0adLq.png)(https://imgchr.com/i/s0adLq)
 
 ### 分析作品的标签
 
@@ -41,9 +39,9 @@
 
 我们分别以标签的数量和评分的平均值作为权重，绘制词云。
 
-![image-20210114110030942](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114110030942.png)
+![s0aBwV.png](https://s3.ax1x.com/2021/01/15/s0aBwV.png)(https://imgchr.com/i/s0aBwV)
 
-![image-20210114110047813](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114110047813.png)
+![s0a6W4.png](https://s3.ax1x.com/2021/01/15/s0a6W4.png)(https://imgchr.com/i/s0a6W4)
 
 从数量上看，`Comedy,Action,Romance`所占数量最多。但从平均得分上看，`Thriller,Police,Josei`的得分最高。从总体上看，平均得分高的标签的数量都不多，也就是说，从统计上看，小众类型的作品的得分会相对高一些。
 
@@ -51,9 +49,9 @@
 
 然后，我们分析观众对作品评分的大致情况，因为评分同时与用户和作品相关，于是考虑计算作品的平均得分，绘制作品评分的折线图，同时绘制用户评分的直方图。
 
-![image-20210114111013424](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114111013424.png)
+![s0asFU.png](https://s3.ax1x.com/2021/01/15/s0asFU.png)(https://imgchr.com/i/s0asFU)
 
-![image-20210114111029049](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114111029049.png)
+![s0aDoT.png](https://s3.ax1x.com/2021/01/15/s0aDoT.png)(https://imgchr.com/i/s0aDoT)
 
 可以看出，绝大部分作品的平均得分都在8分左右，而用户的评分也都集中在8分左右，这两者是相符的。据此，在后续的分析中，可以认为评分在9分及以上的作品是用户明显喜爱的作品。
 
@@ -61,7 +59,7 @@
 
 除了每部作品的平均得分，我们也关心作品的人气，也即观看的人数。一个直观的想法是，观看的人数和评分的人数应当是正相关的。因此，在这里用评分的人数进行衡量。绘制评分人数TOP10作品的直方图。
 
-![image-20210114111338984](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114111338984.png)
+![s0agSJ.png](https://s3.ax1x.com/2021/01/15/s0agSJ.png)(https://imgchr.com/i/s0agSJ)
 
 TOP10人气的作品评价人数相差不多，分别是：
 
@@ -78,13 +76,13 @@ TOP10人气的作品评价人数相差不多，分别是：
 
 考察TOP10人气作品的标签，绘制直方图。
 
-![image-20210114111414681](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114111414681.png)
+![s0a2l9.png](https://s3.ax1x.com/2021/01/15/s0a2l9.png)(https://imgchr.com/i/s0a2l9)
 
 可以发现，`Action,Shounen(少年)`是出现频率最多的，可见人气最高的动画大多是热血王道类型的。
 
 对于全部作品，按评价人数取对数绘制折线图。
 
-![image-20210114111454110](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114111454110.png)
+![s0aRyR.png](https://s3.ax1x.com/2021/01/15/s0aRyR.png)(https://imgchr.com/i/s0aRyR)
 
 对折线图进行分析，曲线在取对数后呈线性，说明作品的观看人数呈现较为明显的**长尾分布**，超过10万评价的作品只有约500个，只占5%，而低于1000的作品有5000个，占50%。一个可能的原因是，有高热度的作品更容易吸引观众，因此评价人数像滚雪球一样越来越多。这也是符合**马太效应**的一个典型现象。
 
@@ -100,7 +98,7 @@ TOP10人气的作品评价人数相差不多，分别是：
 
 对于冷启动的情形，采用基于余弦相似度的KNN进行推荐。KNN是通过测量不同特征值之间的距离进行分类。它的思路是：如果一个样本在特征空间中的k个最相似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别，其中K通常是不大于20的整数。反过来说，对于一个给定的正类样本集合，未知的样本也大概率是和它们同属一个类别。在本项目中，我们取用户看过的作品作为正类，寻找与这部分作品最接近的邻居，并推荐这部分邻居。经测试，推荐的结果基本能达到0.7左右的相似度，峰值甚至能达到0.9以上。
 
-![image-20210114113656311](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210114113656311.png)
+![s0a4w6.png](https://s3.ax1x.com/2021/01/15/s0a4w6.png)(https://imgchr.com/i/s0a4w6)
 
 ### 使用矩阵分解进行推荐
 
